@@ -5,6 +5,7 @@
 #include "Player.h";
 #include "Goal.h";
 #include "Box.h";
+#include <iostream>
 
 char wallChar = '#';
 char floorChar = '.';
@@ -14,7 +15,6 @@ char boxChar = 'b';
 
 
 Level::Level(std::string FName) {
-	player = Player();
 	LoadLevelFromFile(FName);
 
 }
@@ -81,18 +81,22 @@ void Level::LoadLevelFromFile(std::string FName) {
 			}
 			else if (fileLine[c] == playerChar) { //TODO : place player obj, dont instantiate...maybe..
 				//printf("p");
-				layer1[r][c] = Node();
+				//layer1[r][c] = Node();
 				layer1[r][c].entityInNode = new Floor();
 				layer1[r][c].xPos = r; layer1[r][c].yPos = c;
 				layer1[r][c].entityInNode->sprite.setPosition(r*32, c*32);
 				layer1[r][c].entityInNode->GridXPos = r;
+				//std::cout << layer1[r][c].entityInNode->GridXPos << std::endl;
 				layer1[r][c].entityInNode->GridYPos = c;
-				layer2[r][c] = Node();
+				//layer2[r][c] = Node();
 				layer2[r][c].entityInNode = &player; //empty...
+				
 				layer2[r][c].xPos = r; layer2[r][c].yPos = c;
 				layer2[r][c].entityInNode->sprite.setPosition(r * 32, c * 32);
 				layer2[r][c].entityInNode->GridXPos = r;
+				//std::cout << layer1[r][c].entityInNode->GridXPos << std::endl;
 				layer2[r][c].entityInNode->GridYPos = c;
+				//std::cout << layer1[r][c].entityInNode->GridYPos << std::endl;
 
 			}
 

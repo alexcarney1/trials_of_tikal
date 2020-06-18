@@ -4,4 +4,5 @@ Floor::Floor() {
 	texture.loadFromFile("assets/floor.png");
 	sprite.setTexture(texture);
 	//sprite.setPosition(10, 10);
+	name = "Floor";
 }

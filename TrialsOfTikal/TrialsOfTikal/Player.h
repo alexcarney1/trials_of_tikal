@@ -4,6 +4,6 @@ class Player :
 	public Entity
 {
 public: Player();
-
+	  //PlayerMove pMove =PlayerMove(*this);
 };
 

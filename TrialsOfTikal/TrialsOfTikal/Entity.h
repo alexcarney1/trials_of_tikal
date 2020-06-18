@@ -13,6 +13,7 @@ public:
 	sf::Texture texture;
 	int GridXPos;
 	int GridYPos;
+	std::string name;
 
 	Component *GetComponent(std::string compName) {
 		for (Component *comp : components) {

@@ -2,13 +2,18 @@
 #include "PlayerMove.h"
 #include "Game.h"
 #include "Level.h"
-PlayerMove playerMove;
+#include <iostream>
+//PlayerMove playerMove;
 Player::Player() {
-	playerMove = PlayerMove(*this);
+	//playerMove = PlayerMove();
 	isWalkable = false;
 	texture.loadFromFile("assets/player.png");
 	sprite.setTexture(texture);
 	//sprite.setPosition(10, 10);
-	components.push_back(&playerMove);
+	printf("hererere");
+	name = "Player";
+	std::cout << this->GridXPos << std::endl;
+	
+	components.push_back(new PlayerMove(*this));
 	
 }
