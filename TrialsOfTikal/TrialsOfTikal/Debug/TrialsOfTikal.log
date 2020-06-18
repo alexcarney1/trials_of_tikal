@@ -1,3 +1,4 @@
 ﻿  PlayerMove.cpp
 D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\Component.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\Node.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   TrialsOfTikal.vcxproj -> D:\trials_of_tikal\TrialsOfTikal\Debug\TrialsOfTikal.exe
