@@ -1,10 +1,19 @@
 #include "PlayerMove.h"
 #include "Game.h"
+
+
 PlayerMove::PlayerMove() {
-	name = "PlayerMove";
+
 }
 
-void PlayerMove::Update()
+PlayerMove::PlayerMove(Entity &newOwner) {
+	name = "PlayerMove";
+	owner = &newOwner;
+}
+
+
+
+void PlayerMove::UpdateComponent()
 {
 	printf("componentUpdated!");
 	ReadInput();

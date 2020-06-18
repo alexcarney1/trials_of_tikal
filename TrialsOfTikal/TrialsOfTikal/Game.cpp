@@ -21,7 +21,8 @@ void Game::Update() {
 	//}
 
 	for (Component *comp : activeLevel->player.components) { //NOTE: object slicing was here. The components vector was holding Base classes, need a pointer to the derived classes to call overriden virtual functions
-		comp->Update();
+		printf("player componenets updated");
+		comp->UpdateComponent();
 	}
 }
 

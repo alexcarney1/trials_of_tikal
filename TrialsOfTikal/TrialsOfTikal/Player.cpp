@@ -4,7 +4,7 @@
 #include "Level.h"
 PlayerMove playerMove;
 Player::Player() {
-	playerMove = PlayerMove();
+	playerMove = PlayerMove(*this);
 	isWalkable = false;
 	texture.loadFromFile("assets/player.png");
 	sprite.setTexture(texture);

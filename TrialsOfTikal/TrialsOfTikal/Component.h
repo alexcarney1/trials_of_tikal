@@ -1,9 +1,9 @@
 #pragma once
-#include <string>;
+#include <string>
 class Component
 {
 public: 
 	std::string name;
-	virtual void Update();
+	virtual void UpdateComponent();
 };
 

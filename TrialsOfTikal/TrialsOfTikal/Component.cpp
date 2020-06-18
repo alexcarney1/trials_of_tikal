@@ -1,6 +1,6 @@
 #include "Component.h"
 
-void Component::Update()
+void Component::UpdateComponent()
 {
 	printf("base");
 }
