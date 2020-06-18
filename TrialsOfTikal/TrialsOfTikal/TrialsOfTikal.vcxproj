@@ -145,6 +145,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Box.cpp" />
+    <ClCompile Include="Component.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Floor.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -153,10 +154,12 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerMove.cpp" />
     <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Box.h" />
+    <ClInclude Include="Component.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Floor.h" />
     <ClInclude Include="Game.h" />
@@ -164,6 +167,7 @@
     <ClInclude Include="Level.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerMove.h" />
     <ClInclude Include="Wall.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
