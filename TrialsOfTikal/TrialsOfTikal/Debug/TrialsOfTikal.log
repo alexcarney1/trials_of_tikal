@@ -1,0 +1,23 @@
+﻿  Level.cpp
+D:\Trials_of_Tikal\TrialsOfTikal\TrialsOfTikal\Node.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+D:\Trials_of_Tikal\TrialsOfTikal\TrialsOfTikal\Level.cpp(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+D:\Trials_of_Tikal\TrialsOfTikal\TrialsOfTikal\Level.cpp(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+D:\Trials_of_Tikal\TrialsOfTikal\TrialsOfTikal\Level.cpp(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+D:\Trials_of_Tikal\TrialsOfTikal\TrialsOfTikal\Level.cpp(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+D:\Trials_of_Tikal\TrialsOfTikal\TrialsOfTikal\Level.cpp(7,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+D:\Trials_of_Tikal\TrialsOfTikal\TrialsOfTikal\Level.cpp(27,21): warning C4018: '<': signed/unsigned mismatch
+D:\Trials_of_Tikal\TrialsOfTikal\TrialsOfTikal\Level.cpp(34,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Trials_of_Tikal\TrialsOfTikal\TrialsOfTikal\Level.cpp(34,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Trials_of_Tikal\TrialsOfTikal\TrialsOfTikal\Level.cpp(44,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Trials_of_Tikal\TrialsOfTikal\TrialsOfTikal\Level.cpp(44,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Trials_of_Tikal\TrialsOfTikal\TrialsOfTikal\Level.cpp(54,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Trials_of_Tikal\TrialsOfTikal\TrialsOfTikal\Level.cpp(54,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Trials_of_Tikal\TrialsOfTikal\TrialsOfTikal\Level.cpp(64,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Trials_of_Tikal\TrialsOfTikal\TrialsOfTikal\Level.cpp(64,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Trials_of_Tikal\TrialsOfTikal\TrialsOfTikal\Level.cpp(68,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Trials_of_Tikal\TrialsOfTikal\TrialsOfTikal\Level.cpp(68,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Trials_of_Tikal\TrialsOfTikal\TrialsOfTikal\Level.cpp(75,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Trials_of_Tikal\TrialsOfTikal\TrialsOfTikal\Level.cpp(75,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Trials_of_Tikal\TrialsOfTikal\TrialsOfTikal\Level.cpp(79,61): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Trials_of_Tikal\TrialsOfTikal\TrialsOfTikal\Level.cpp(79,53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  TrialsOfTikal.vcxproj -> D:\Trials_of_Tikal\TrialsOfTikal\Debug\TrialsOfTikal.exe
