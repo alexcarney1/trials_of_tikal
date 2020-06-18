@@ -11,6 +11,8 @@ public:
 	bool isWalkable;
 	sf::Sprite sprite;
 	sf::Texture texture;
+	int GridXPos;
+	int GridYPos;
 
 	Component *GetComponent(std::string compName) {
 		for (Component *comp : components) {

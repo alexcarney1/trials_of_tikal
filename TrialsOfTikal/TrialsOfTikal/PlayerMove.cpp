@@ -25,8 +25,22 @@ void PlayerMove::ReadInput()
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
 		printf("Up PRESSED!!");
-		Direction::dirs val = Direction::NORTH;
-		TryToMove(val);
+		TryToMove(Direction::NORTH);
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+	{
+		printf("Down PRESSED!!");
+		TryToMove(Direction::SOUTH);
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+	{
+		printf("LEft PRESSED!!");
+		TryToMove(Direction::WEST);
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+	{
+		printf("RIGHT PRESSED!!");
+		TryToMove(Direction::EAST);
 	}
 }
 

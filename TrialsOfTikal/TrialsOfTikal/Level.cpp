@@ -34,6 +34,8 @@ void Level::LoadLevelFromFile(std::string FName) {
 				layer1[r][c].entityInNode = new Wall();
 				layer1[r][c].xPos = r; layer1[r][c].yPos = c;
 				layer1[r][c].entityInNode->sprite.setPosition(r*32, c*32);
+				layer1[r][c].entityInNode->GridXPos = r;
+				layer1[r][c].entityInNode->GridYPos = c;
 				//layer2[r][c] = Node();
 				layer2[r][c].entityInNode = NULL; //empty...
 				layer2[r][c].xPos = r; layer2[r][c].yPos = c;
@@ -44,6 +46,8 @@ void Level::LoadLevelFromFile(std::string FName) {
 				layer1[r][c].entityInNode = new Floor();
 				layer1[r][c].xPos = r; layer1[r][c].yPos = c;
 				layer1[r][c].entityInNode->sprite.setPosition(r*32, c*32);
+				layer1[r][c].entityInNode->GridXPos = r;
+				layer1[r][c].entityInNode->GridYPos = c;
 				layer2[r][c] = Node();
 				layer2[r][c].entityInNode = NULL; //empty...
 				layer2[r][c].xPos = r; layer2[r][c].yPos = c;
@@ -54,6 +58,8 @@ void Level::LoadLevelFromFile(std::string FName) {
 				layer1[r][c].entityInNode = new Goal();
 				layer1[r][c].xPos = r; layer1[r][c].yPos = c;
 				layer1[r][c].entityInNode->sprite.setPosition(r*32, c*32);
+				layer1[r][c].entityInNode->GridXPos = r;
+				layer1[r][c].entityInNode->GridYPos = c;
 				layer2[r][c] = Node();
 				layer2[r][c].entityInNode = NULL; //empty...
 				layer2[r][c].xPos = r; layer2[r][c].yPos = c;
@@ -64,10 +70,14 @@ void Level::LoadLevelFromFile(std::string FName) {
 				layer1[r][c].entityInNode = new Floor();
 				layer1[r][c].xPos = r; layer1[r][c].yPos = c;
 				layer1[r][c].entityInNode->sprite.setPosition(r*32, c*32);
+				layer1[r][c].entityInNode->GridXPos = r;
+				layer1[r][c].entityInNode->GridYPos = c;
 				layer2[r][c] = Node();
 				layer2[r][c].entityInNode = new Box(); //empty...
 				layer2[r][c].xPos = r; layer2[r][c].yPos = c;
 				layer2[r][c].entityInNode->sprite.setPosition(r*32, c*32);
+				layer2[r][c].entityInNode->GridXPos = r;
+				layer2[r][c].entityInNode->GridYPos = c;
 			}
 			else if (fileLine[c] == playerChar) { //TODO : place player obj, dont instantiate...maybe..
 				//printf("p");
@@ -75,10 +85,14 @@ void Level::LoadLevelFromFile(std::string FName) {
 				layer1[r][c].entityInNode = new Floor();
 				layer1[r][c].xPos = r; layer1[r][c].yPos = c;
 				layer1[r][c].entityInNode->sprite.setPosition(r*32, c*32);
+				layer1[r][c].entityInNode->GridXPos = r;
+				layer1[r][c].entityInNode->GridYPos = c;
 				layer2[r][c] = Node();
 				layer2[r][c].entityInNode = &player; //empty...
 				layer2[r][c].xPos = r; layer2[r][c].yPos = c;
 				layer2[r][c].entityInNode->sprite.setPosition(r * 32, c * 32);
+				layer2[r][c].entityInNode->GridXPos = r;
+				layer2[r][c].entityInNode->GridYPos = c;
 
 			}
 
