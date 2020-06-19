@@ -14,7 +14,7 @@ public:
 	int GridXPos;
 	int GridYPos;
 	std::string name;
-
+	virtual void OnCollision(Entity& other) =0;
 	Component *GetComponent(std::string compName) {
 		for (Component *comp : components) {
 			printf(comp->name.c_str());

@@ -5,5 +5,6 @@ class Player :
 {
 public: Player();
 	  //PlayerMove pMove =PlayerMove(*this);
+	  void OnCollision(Entity& other);
 };
 

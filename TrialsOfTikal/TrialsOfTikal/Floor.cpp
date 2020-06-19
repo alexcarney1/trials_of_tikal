@@ -6,3 +6,7 @@ Floor::Floor() {
 	//sprite.setPosition(10, 10);
 	name = "Floor";
 }
+
+void Floor::OnCollision(Entity& other)
+{
+}

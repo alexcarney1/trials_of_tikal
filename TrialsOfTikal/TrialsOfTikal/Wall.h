@@ -6,6 +6,7 @@ class Wall :
 {
 public: 
 	Wall();
+	void OnCollision(Entity& other);
 	  
 };
 

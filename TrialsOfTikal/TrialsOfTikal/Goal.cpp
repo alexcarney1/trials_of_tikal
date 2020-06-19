@@ -6,3 +6,7 @@ Goal::Goal() {
 	sprite.setTexture(texture);
 	//sprite.setPosition(10, 10);
 }
+
+void Goal::OnCollision(Entity& other)
+{
+}

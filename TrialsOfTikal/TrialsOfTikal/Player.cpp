@@ -17,3 +17,10 @@ Player::Player() {
 	components.push_back(new PlayerMove(*this));
 	
 }
+
+void Player::OnCollision(Entity& other)
+{
+	if (other.GetComponent("Push")) {
+		printf("collided with something that has a push component!");
+	}
+}

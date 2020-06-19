@@ -4,5 +4,6 @@ class Box :
 	public Entity
 {
 public: Box();
+	  void OnCollision(Entity& other);
 };
 

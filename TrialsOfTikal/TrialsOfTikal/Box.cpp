@@ -6,3 +6,7 @@ Box::Box() {
 	sprite.setTexture(texture);
 	//sprite.setPosition(10, 10);
 }
+
+void Box::OnCollision(Entity& other)
+{
+}

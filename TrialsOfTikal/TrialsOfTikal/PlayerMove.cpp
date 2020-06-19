@@ -44,7 +44,7 @@ void PlayerMove::TryToMove(Direction::dirs moveDir)
 {
 	if (moveDir == Direction::NORTH) {
 		if (Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos-1].entityInNode == NULL && Game::activeLevel->layer1[owner->GridXPos][owner->GridYPos-1].entityInNode->isWalkable) {
-			printf("Move successful!");
+			//printf("Move successful!");
 			Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos].entityInNode = NULL; //reset old pos to NULL
 			Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos-1].entityInNode = owner;
 			owner->GridYPos -= 1;
@@ -53,7 +53,7 @@ void PlayerMove::TryToMove(Direction::dirs moveDir)
 	}
 	if (moveDir == Direction::SOUTH) {
 		if (Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos + 1].entityInNode == NULL && Game::activeLevel->layer1[owner->GridXPos][owner->GridYPos + 1].entityInNode->isWalkable) {
-			printf("Move successful!");
+			//printf("Move successful!");
 			Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos].entityInNode = NULL; //reset old pos to NULL
 			Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos + 1].entityInNode = owner;
 			owner->GridYPos += 1;
@@ -62,7 +62,7 @@ void PlayerMove::TryToMove(Direction::dirs moveDir)
 	}
 	if (moveDir == Direction::WEST) {
 		if (Game::activeLevel->layer2[owner->GridXPos-1][owner->GridYPos].entityInNode == NULL && Game::activeLevel->layer1[owner->GridXPos-1][owner->GridYPos].entityInNode->isWalkable) {
-			printf("Move successful!");
+			//printf("Move successful!");
 			Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos].entityInNode = NULL; //reset old pos to NULL
 			Game::activeLevel->layer2[owner->GridXPos-1][owner->GridYPos].entityInNode = owner;
 			owner->GridXPos -= 1;
@@ -71,7 +71,7 @@ void PlayerMove::TryToMove(Direction::dirs moveDir)
 	}
 	if (moveDir == Direction::EAST) {
 		if (Game::activeLevel->layer2[owner->GridXPos + 1][owner->GridYPos].entityInNode == NULL && Game::activeLevel->layer1[owner->GridXPos + 1][owner->GridYPos].entityInNode->isWalkable) {
-			printf("Move successful!");
+			//printf("Move successful!");
 			Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos].entityInNode = NULL; //reset old pos to NULL
 			Game::activeLevel->layer2[owner->GridXPos + 1][owner->GridYPos].entityInNode = owner;
 			owner->GridXPos += 1;

@@ -6,3 +6,7 @@ Wall::Wall() {
 	sprite.setTexture(texture);
 	//sprite.setPosition(10, 10);
 }
+
+void Wall::OnCollision(Entity& other)
+{
+}
