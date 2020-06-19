@@ -5,7 +5,6 @@ class Game
 {
 public: 
 	  sf::RenderWindow* window;
-	  sf::Event event;
 	  static Level* activeLevel;
 	  Game();
 	  ~Game();

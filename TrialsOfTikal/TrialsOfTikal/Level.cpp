@@ -14,7 +14,7 @@ char goalChar = 'g';
 char boxChar = 'b';
 
 
-Level::Level(std::string FName) {
+Level::Level(std::string FName) : player(Player()) {
 	LoadLevelFromFile(FName);
 
 }

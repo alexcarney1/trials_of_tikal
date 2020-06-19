@@ -4,15 +4,16 @@
 Game game = Game();
 sf::Time elapsed_time;
 sf::Clock r;
+sf::Event event;
 int main() {
 
 	while (game.window->isOpen()) {
-		while (game.window->pollEvent(game.event)) {
-			if (game.event.type == sf::Event::Closed) {
+		while (game.window->pollEvent(event)) {
+			if (event.type == sf::Event::Closed) {
 				game.window->close();
 			}
 			if (sf::Event::KeyPressed) {
-				if (game.event.key.code == sf::Keyboard::Escape) { game.window->close(); }
+				if (event.key.code == sf::Keyboard::Escape) { game.window->close(); }
 			}
 		}
 	sf::Time delta_time = sf::milliseconds(500);

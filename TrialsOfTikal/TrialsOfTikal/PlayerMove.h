@@ -4,7 +4,7 @@
 #include "Entity.h"
 class PlayerMove :public Component
 {
-public: PlayerMove(Entity& newOwner); //todo shitty def constructor....check playe rdelcations out
+public: PlayerMove(Entity& newOwner); 
 	  PlayerMove();
 	  virtual void UpdateComponent();
 	  Entity *owner; //points at owner object

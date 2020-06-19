@@ -3,9 +3,9 @@
 #include <iostream>
 
 
-PlayerMove::PlayerMove(Entity& newOwner) {
+PlayerMove::PlayerMove(Entity& newOwner) : owner(&newOwner){
 	name = "PlayerMove";
-	owner = &newOwner;
+	//owner = &newOwner;
 }
 
 PlayerMove::PlayerMove() {

@@ -4,9 +4,10 @@
 #include "Level.h"
 #include "PlayerMove.h"
 #include "Component.h"
+
+//todo: change levels
 Level* Game::activeLevel = new Level("assets/testLevel.txt");
-Game::Game() {
-	this->window = new sf::RenderWindow(sf::VideoMode(920, 720), "Trials of Tikal");
+Game::Game() : window(new sf::RenderWindow(sf::VideoMode(920, 720), "Trials of Tikal")){
 	
 }
 
