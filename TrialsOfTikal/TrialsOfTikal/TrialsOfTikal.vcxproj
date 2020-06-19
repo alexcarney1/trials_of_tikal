@@ -156,6 +156,7 @@
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerMove.cpp" />
+    <ClCompile Include="Push.cpp" />
     <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -170,6 +171,7 @@
     <ClInclude Include="Node.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerMove.h" />
+    <ClInclude Include="Push.h" />
     <ClInclude Include="Wall.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

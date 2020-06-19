@@ -3,6 +3,7 @@
 #include "Game.h"
 #include "Level.h"
 #include <iostream>
+#include "Push.h"
 //PlayerMove playerMove;
 Player::Player() {
 	//playerMove = PlayerMove();
@@ -21,7 +22,5 @@ Player::Player() {
 void Player::OnCollision(Entity& other)
 {
 	printf("player has collided with something!");
-	if (other.GetComponent("Push")) {
-		printf("collided with something that has a push component!");
-	}
+
 }
