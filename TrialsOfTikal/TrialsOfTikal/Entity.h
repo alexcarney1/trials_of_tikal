@@ -9,6 +9,7 @@ public:
 	//Game::activeLevel->LoadLevelFromFile("testLevel.txt"); // HOW TO GET A STATIC!
 	std::vector<Component*> components;
 	bool isWalkable;
+	bool hasCollision;
 	sf::Sprite sprite;
 	sf::Texture texture;
 	int GridXPos;

@@ -1,7 +1,8 @@
 #include "Goal.h"
 
 Goal::Goal() {
-	isWalkable = false;
+	isWalkable = true;
+	hasCollision = false;
 	texture.loadFromFile("assets/goal.png");
 	sprite.setTexture(texture);
 	//sprite.setPosition(10, 10);

@@ -1,0 +1,4 @@
+-entity needs a constructor we can call from derived classes
+that sets GridXPos, GridYPos,, and is walkable. This will clear 3 warnings.
+--clean up level loader make it more robust
+--queue up movement so it feels snappier

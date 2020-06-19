@@ -8,9 +8,6 @@ PlayerMove::PlayerMove(Entity& newOwner) : owner(&newOwner){
 	//owner = &newOwner;
 }
 
-PlayerMove::PlayerMove() {
-
-}
 
 
 void PlayerMove::UpdateComponent()
@@ -43,6 +40,10 @@ void PlayerMove::ReadInput()
 void PlayerMove::TryToMove(Direction::dirs moveDir)
 {
 	if (moveDir == Direction::NORTH) {
+		if (Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos-1].entityInNode != NULL
+			&& Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos - 1].entityInNode->hasCollision) {
+			owner->OnCollision(*(Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos-1].entityInNode));
+		}
 		if (Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos-1].entityInNode == NULL && Game::activeLevel->layer1[owner->GridXPos][owner->GridYPos-1].entityInNode->isWalkable) {
 			//printf("Move successful!");
 			Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos].entityInNode = NULL; //reset old pos to NULL
@@ -52,6 +53,10 @@ void PlayerMove::TryToMove(Direction::dirs moveDir)
 		}
 	}
 	if (moveDir == Direction::SOUTH) {
+		if (Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos + 1].entityInNode != NULL
+			&& Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos + 1].entityInNode->hasCollision) {
+			owner->OnCollision(*(Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos + 1].entityInNode));
+		}
 		if (Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos + 1].entityInNode == NULL && Game::activeLevel->layer1[owner->GridXPos][owner->GridYPos + 1].entityInNode->isWalkable) {
 			//printf("Move successful!");
 			Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos].entityInNode = NULL; //reset old pos to NULL
@@ -61,6 +66,10 @@ void PlayerMove::TryToMove(Direction::dirs moveDir)
 		}
 	}
 	if (moveDir == Direction::WEST) {
+		if (Game::activeLevel->layer2[owner->GridXPos-1][owner->GridYPos].entityInNode != NULL
+			&& Game::activeLevel->layer2[owner->GridXPos-1][owner->GridYPos].entityInNode->hasCollision) {
+			owner->OnCollision(*(Game::activeLevel->layer2[owner->GridXPos-1][owner->GridYPos].entityInNode));
+		}
 		if (Game::activeLevel->layer2[owner->GridXPos-1][owner->GridYPos].entityInNode == NULL && Game::activeLevel->layer1[owner->GridXPos-1][owner->GridYPos].entityInNode->isWalkable) {
 			//printf("Move successful!");
 			Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos].entityInNode = NULL; //reset old pos to NULL
@@ -70,6 +79,10 @@ void PlayerMove::TryToMove(Direction::dirs moveDir)
 		}
 	}
 	if (moveDir == Direction::EAST) {
+		if (Game::activeLevel->layer2[owner->GridXPos + 1][owner->GridYPos].entityInNode != NULL
+			&& Game::activeLevel->layer2[owner->GridXPos + 1][owner->GridYPos].entityInNode->hasCollision) {
+			owner->OnCollision(*(Game::activeLevel->layer2[owner->GridXPos + 1][owner->GridYPos].entityInNode));
+		}
 		if (Game::activeLevel->layer2[owner->GridXPos + 1][owner->GridYPos].entityInNode == NULL && Game::activeLevel->layer1[owner->GridXPos + 1][owner->GridYPos].entityInNode->isWalkable) {
 			//printf("Move successful!");
 			Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos].entityInNode = NULL; //reset old pos to NULL

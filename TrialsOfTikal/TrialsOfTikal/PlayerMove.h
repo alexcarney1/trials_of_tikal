@@ -5,7 +5,6 @@
 class PlayerMove :public Component
 {
 public: PlayerMove(Entity& newOwner); 
-	  PlayerMove();
 	  void UpdateComponent();
 	  Entity *owner; //points at owner object //TODO: put this in component....component will need a constructor
 	  void ReadInput();

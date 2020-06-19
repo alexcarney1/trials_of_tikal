@@ -20,6 +20,7 @@ Player::Player() {
 
 void Player::OnCollision(Entity& other)
 {
+	printf("player has collided with something!");
 	if (other.GetComponent("Push")) {
 		printf("collided with something that has a push component!");
 	}
