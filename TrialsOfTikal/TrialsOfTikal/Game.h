@@ -8,6 +8,7 @@ public:
 	  static Level* activeLevel;
 	  Game();
 	  ~Game();
+	  void ReadMasterInput();
 	  void Render();
 	  void Update();
 };

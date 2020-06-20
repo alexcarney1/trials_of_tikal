@@ -96,6 +96,7 @@ void Level::LoadLevelFromFile(std::string FName) {
 				layer2[r][c].entityInNode->sprite.setPosition(c * 32, r * 32);
 				layer2[r][c].entityInNode->GridXPos = r;
 				layer2[r][c].entityInNode->GridYPos = c;
+				player.enabled = true;
 			}
 			else if (fileLine[c] == monkeyChar) { //TODO : place player obj, dont instantiate...maybe..
 				layer1[r][c].entityInNode = new Floor();
@@ -108,6 +109,7 @@ void Level::LoadLevelFromFile(std::string FName) {
 				layer2[r][c].entityInNode->sprite.setPosition(c * 32, r * 32);
 				layer2[r][c].entityInNode->GridXPos = r;
 				layer2[r][c].entityInNode->GridYPos = c;
+				monkey.enabled = false;
 			}
 		}
 		r++;

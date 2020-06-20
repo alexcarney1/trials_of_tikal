@@ -14,6 +14,7 @@ public:
 	sf::Texture texture;
 	int GridXPos;
 	int GridYPos;
+	bool enabled = true;
 	std::string name;
 	virtual void OnCollision(Entity& other) =0;
 	Component *GetComponent(std::string compName) {

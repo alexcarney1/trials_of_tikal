@@ -15,20 +15,34 @@ Game::~Game() {
 	delete this->window;
 }
 
-void Game::Update() {
-	//printf("tick");
-	//if (activeLevel->player.GetComponent("PlayerMove") != NULL) {
-	//	printf("player has move!");
-	//}
+void Game::ReadMasterInput()
+{
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::M))
+	{
+		activeLevel->player.enabled = false;
+		activeLevel->monkey.enabled = true;
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
+	{
+		activeLevel->player.enabled = true;
+		activeLevel->monkey.enabled = false;
+	}
 
-	for (Component *comp : activeLevel->player.components) { //NOTE: object slicing was here. The components vector was holding Base classes, need a pointer to the derived classes to call overriden virtual functions
-		//printf("player componenets updated");
-		comp->UpdateComponent();
+}
+
+void Game::Update() {
+
+	if (activeLevel->player.enabled) {
+		for (Component* comp : activeLevel->player.components) { //NOTE: object slicing was here. The components vector was holding Base classes, need a pointer to the derived classes to call overriden virtual functions
+			comp->UpdateComponent();
+		}
 	}
-	for (Component* comp : activeLevel->monkey.components) { //NOTE: object slicing was here. The components vector was holding Base classes, need a pointer to the derived classes to call overriden virtual functions
-	//printf("player componenets updated");
-		comp->UpdateComponent();
+	if (activeLevel->monkey.enabled) {
+		for (Component* comp : activeLevel->monkey.components) { //NOTE: object slicing was here. The components vector was holding Base classes, need a pointer to the derived classes to call overriden virtual functions
+			comp->UpdateComponent();
+		}
 	}
+
 
 	//TODO: boxes then goals. for now all at once.
 	for (int r = 0; r < 16; r++) {
@@ -55,7 +69,7 @@ void Game::Update() {
 
 void Game::Render() {
 	//CLEAR
-
+	ReadMasterInput();
 	this->window->clear(sf::Color::Blue);
 	for (int r = 0; r < 16; r++) {
 		for (int c = 0; c < 16; c++) {
