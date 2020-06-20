@@ -7,17 +7,19 @@
 #include "Box.h"
 #include <iostream>
 #include "GoalBehavior.h"
+#include "Lava.h"
 char wallChar = '#';
 char floorChar = '.';
 char playerChar = 'p';
 char goalChar = 'g';
 char boxChar = 'b';
+char lavaChar = 'l';
 
 
 Level::Level(std::string FName) : player(Player()),numGoals(0) {
 	LoadLevelFromFile(FName);
 	CheckLevelStatus();
-	std::cout << numGoals << std::endl;
+	
 }
 
 void Level::LoadLevelFromFile(std::string FName) {
@@ -32,6 +34,15 @@ void Level::LoadLevelFromFile(std::string FName) {
 				layer1[r][c].entityInNode = new Wall();
 				layer1[r][c].xPos = r; layer1[r][c].yPos = c;
 				layer1[r][c].entityInNode->sprite.setPosition(c*32, r*32);
+				layer1[r][c].entityInNode->GridXPos = r;
+				layer1[r][c].entityInNode->GridYPos = c;
+				layer2[r][c].entityInNode = NULL; //empty...
+				layer2[r][c].xPos = r; layer2[r][c].yPos = c;
+			}
+			else if (fileLine[c] == lavaChar) {
+				layer1[r][c].entityInNode = new Lava();
+				layer1[r][c].xPos = r; layer1[r][c].yPos = c;
+				layer1[r][c].entityInNode->sprite.setPosition(c * 32, r * 32);
 				layer1[r][c].entityInNode->GridXPos = r;
 				layer1[r][c].entityInNode->GridYPos = c;
 				layer2[r][c].entityInNode = NULL; //empty...
@@ -58,6 +69,7 @@ void Level::LoadLevelFromFile(std::string FName) {
 				layer2[r][c] = Node();
 				layer2[r][c].entityInNode = NULL; //empty...
 				layer2[r][c].xPos = r; layer2[r][c].yPos = c;
+				numGoals += 1;
 			}
 			else if (fileLine[c] == boxChar) {
 				layer1[r][c] = Node();
@@ -72,8 +84,6 @@ void Level::LoadLevelFromFile(std::string FName) {
 				layer2[r][c].entityInNode->sprite.setPosition(c*32, r*32);
 				layer2[r][c].entityInNode->GridXPos = r;
 				layer2[r][c].entityInNode->GridYPos = c;
-
-				numGoals += 1;
 			}
 			else if (fileLine[c] == playerChar) { //TODO : place player obj, dont instantiate...maybe..
 				layer1[r][c].entityInNode = new Floor();
@@ -107,7 +117,8 @@ bool Level::CheckLevelStatus()
 			}
 		}
 	}
-	std::cout << numGoalsCovered << std::endl;
+	//std::cout << numGoalsCovered << std::endl;
+	//std::cout << numGoals << std::endl;
 	if (numGoalsCovered == numGoals) {
 		//printf("LEVEL CLEARED!\n");
 		return true;

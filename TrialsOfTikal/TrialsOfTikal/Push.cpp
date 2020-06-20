@@ -9,6 +9,7 @@ void Push::UpdateComponent()
 {
 }
 
+//not checking all layers here. oops.
 void Push::TryToPush(Direction::dirs moveDir)
 {
 	if (moveDir == Direction::NORTH) {

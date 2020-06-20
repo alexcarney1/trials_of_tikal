@@ -6,6 +6,10 @@ that sets GridXPos, GridYPos,, and is walkable. This will clear 3 warnings.
 be its own simplemove component down the line
 
 
+URGENT TO DO:
+--TryToPush and playerMove :: only checking collison on one layer or whatever.
+Broken for lava.
+
 
 CHEESE NOTES:
 
