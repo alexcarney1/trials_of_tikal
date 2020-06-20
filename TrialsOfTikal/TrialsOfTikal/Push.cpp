@@ -42,7 +42,10 @@ void Push::TryToPush(Direction::dirs moveDir)
 		//collide layer1
 		if (Game::activeLevel->layer1[owner->GridXPos + 1][owner->GridYPos].entityInNode != NULL) {
 			owner->OnCollision(*(Game::activeLevel->layer1[owner->GridXPos + 1][owner->GridYPos].entityInNode));
+
+
 		}
+
 		//collide layer2
 		if (Game::activeLevel->layer2[owner->GridXPos + 1][owner->GridYPos].entityInNode != NULL) {
 			owner->OnCollision(*(Game::activeLevel->layer2[owner->GridXPos + 1][owner->GridYPos].entityInNode));

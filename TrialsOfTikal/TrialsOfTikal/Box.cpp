@@ -1,5 +1,6 @@
 #include "Box.h"
 #include "Push.h"
+#include "LavaFiller.h"
 Box::Box() {
 	isWalkable = false;
 	name = "Box";
@@ -12,4 +13,9 @@ Box::Box() {
 
 void Box::OnCollision(Entity& other)
 {
+	if (other.GetComponent("LavaFiller")) {
+		
+		LavaFiller* lavaFiller = dynamic_cast<LavaFiller*>(other.GetComponent("LavaFiller"));
+		lavaFiller->FillLava();
+	}
 }

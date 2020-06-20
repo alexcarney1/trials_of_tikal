@@ -1,10 +1,5 @@
-﻿  Push.cpp
-D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\Push.cpp(37,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\Push.cpp(37,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\Push.cpp(63,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\Push.cpp(63,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\Push.cpp(88,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\Push.cpp(88,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\Push.cpp(113,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\Push.cpp(113,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+﻿  Box.cpp
+  Lava.cpp
+  LavaFiller.cpp
+  Generating Code...
   TrialsOfTikal.vcxproj -> D:\trials_of_tikal\TrialsOfTikal\Debug\TrialsOfTikal.exe
