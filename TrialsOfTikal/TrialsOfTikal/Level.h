@@ -9,5 +9,6 @@ public: Level(std::string FName);
 	  Node layer2[16][16];
 	  void LoadLevelFromFile(std::string FName);
 	  Player player;
+	  int numGoals;
 };
 

@@ -14,8 +14,9 @@ char goalChar = 'g';
 char boxChar = 'b';
 
 
-Level::Level(std::string FName) : player(Player()) {
+Level::Level(std::string FName) : player(Player()),numGoals(0) {
 	LoadLevelFromFile(FName);
+	std::cout << numGoals << std::endl;
 }
 
 void Level::LoadLevelFromFile(std::string FName) {
@@ -70,6 +71,8 @@ void Level::LoadLevelFromFile(std::string FName) {
 				layer2[r][c].entityInNode->sprite.setPosition(c*32, r*32);
 				layer2[r][c].entityInNode->GridXPos = r;
 				layer2[r][c].entityInNode->GridYPos = c;
+
+				numGoals += 1;
 			}
 			else if (fileLine[c] == playerChar) { //TODO : place player obj, dont instantiate...maybe..
 				layer1[r][c].entityInNode = new Floor();
@@ -82,13 +85,9 @@ void Level::LoadLevelFromFile(std::string FName) {
 				layer2[r][c].entityInNode->sprite.setPosition(c * 32, r * 32);
 				layer2[r][c].entityInNode->GridXPos = r;
 				layer2[r][c].entityInNode->GridYPos = c;
-
 			}
-
-
-
-
 		}
 		r++;
 	}
+
 }
