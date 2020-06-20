@@ -16,7 +16,7 @@ int main() {
 				if (event.key.code == sf::Keyboard::Escape) { game.window->close(); }
 			}
 		}
-	sf::Time delta_time = sf::milliseconds(500);
+	sf::Time delta_time = sf::milliseconds(320);
 	elapsed_time += r.restart();
 	if (elapsed_time >= delta_time) {
 		
