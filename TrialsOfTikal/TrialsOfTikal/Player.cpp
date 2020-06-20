@@ -11,10 +11,7 @@ Player::Player() {
 	texture.loadFromFile("assets/player.png");
 	sprite.setTexture(texture);
 	//sprite.setPosition(10, 10);
-	printf("hererere");
 	name = "Player";
-	std::cout << this->GridXPos << std::endl;
-	
 	components.push_back(new PlayerMove(*this));
 	
 }

@@ -156,6 +156,7 @@
     <ClCompile Include="LavaFiller.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Monkey.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerMove.cpp" />
@@ -174,6 +175,7 @@
     <ClInclude Include="Lava.h" />
     <ClInclude Include="LavaFiller.h" />
     <ClInclude Include="Level.h" />
+    <ClInclude Include="Monkey.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerMove.h" />

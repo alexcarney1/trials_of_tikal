@@ -2,6 +2,7 @@
 #include <string>
 #include "Node.h"
 #include "Player.h"
+#include "Monkey.h"
 class Level
 {
 public: Level(std::string FName);
@@ -11,6 +12,7 @@ public: Level(std::string FName);
 	  bool CheckLevelStatus();
 	  //void UpdateLevelStatus();
 	  Player player;
+	  Monkey monkey;
 	  int numGoals;
 };
 

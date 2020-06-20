@@ -14,9 +14,9 @@ char playerChar = 'p';
 char goalChar = 'g';
 char boxChar = 'b';
 char lavaChar = 'l';
+char monkeyChar = 'm';
 
-
-Level::Level(std::string FName) : player(Player()),numGoals(0) {
+Level::Level(std::string FName) : player(Player()),numGoals(0), monkey(Monkey()) {
 	LoadLevelFromFile(FName);
 	CheckLevelStatus();
 	
@@ -92,6 +92,18 @@ void Level::LoadLevelFromFile(std::string FName) {
 				layer1[r][c].entityInNode->GridXPos = r;
 				layer1[r][c].entityInNode->GridYPos = c;
 				layer2[r][c].entityInNode = &player; //empty...
+				layer2[r][c].xPos = r; layer2[r][c].yPos = c;
+				layer2[r][c].entityInNode->sprite.setPosition(c * 32, r * 32);
+				layer2[r][c].entityInNode->GridXPos = r;
+				layer2[r][c].entityInNode->GridYPos = c;
+			}
+			else if (fileLine[c] == monkeyChar) { //TODO : place player obj, dont instantiate...maybe..
+				layer1[r][c].entityInNode = new Floor();
+				layer1[r][c].xPos = r; layer1[r][c].yPos = c;
+				layer1[r][c].entityInNode->sprite.setPosition(c * 32, r * 32);
+				layer1[r][c].entityInNode->GridXPos = r;
+				layer1[r][c].entityInNode->GridYPos = c;
+				layer2[r][c].entityInNode = &monkey; //empty...
 				layer2[r][c].xPos = r; layer2[r][c].yPos = c;
 				layer2[r][c].entityInNode->sprite.setPosition(c * 32, r * 32);
 				layer2[r][c].entityInNode->GridXPos = r;
