@@ -7,7 +7,7 @@
 
 //todo: change levels
 Level* Game::activeLevel = new Level("assets/testLevel.txt");
-Game::Game() : window(new sf::RenderWindow(sf::VideoMode(920, 720), "Trials of Tikal")){
+Game::Game() : window(new sf::RenderWindow(sf::VideoMode(512, 512), "Trials of Tikal", sf::Style::Titlebar | sf::Style::Close)){
 	
 }
 
