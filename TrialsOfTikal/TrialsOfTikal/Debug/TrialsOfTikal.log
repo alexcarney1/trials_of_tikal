@@ -1,10 +1,10 @@
-﻿  PlayerMove.cpp
-D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\PlayerMove.cpp(58,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\PlayerMove.cpp(58,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\PlayerMove.cpp(78,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\PlayerMove.cpp(78,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\PlayerMove.cpp(96,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\PlayerMove.cpp(96,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\PlayerMove.cpp(114,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\PlayerMove.cpp(114,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+﻿  Push.cpp
+D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\Push.cpp(37,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\Push.cpp(37,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\Push.cpp(63,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\Push.cpp(63,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\Push.cpp(88,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\Push.cpp(88,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\Push.cpp(113,68): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\Push.cpp(113,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   TrialsOfTikal.vcxproj -> D:\trials_of_tikal\TrialsOfTikal\Debug\TrialsOfTikal.exe

@@ -21,6 +21,4 @@ Player::Player() {
 
 void Player::OnCollision(Entity& other)
 {
-	printf("player has collided with something!");
-
 }
