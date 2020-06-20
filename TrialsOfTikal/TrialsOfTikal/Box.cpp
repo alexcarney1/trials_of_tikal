@@ -2,6 +2,7 @@
 #include "Push.h"
 Box::Box() {
 	isWalkable = false;
+	name = "Box";
 	hasCollision = true;
 	texture.loadFromFile("assets/box.png");
 	sprite.setTexture(texture);

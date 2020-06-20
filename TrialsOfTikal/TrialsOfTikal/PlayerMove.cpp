@@ -43,6 +43,7 @@ void PlayerMove::TryToMove(Direction::dirs moveDir)
 		if (Game::activeLevel->layer2[owner->GridXPos-1][owner->GridYPos].entityInNode != NULL
 			&& Game::activeLevel->layer2[owner->GridXPos-1][owner->GridYPos].entityInNode->hasCollision) {
 			owner->OnCollision(*(Game::activeLevel->layer2[owner->GridXPos-1][owner->GridYPos].entityInNode));
+			owner->OnCollision(*(Game::activeLevel->layer1[owner->GridXPos - 1][owner->GridYPos].entityInNode));
 			if (Game::activeLevel->layer2[owner->GridXPos-1][owner->GridYPos].entityInNode->GetComponent("Push")) {
 				Push* pushComp = dynamic_cast<Push*>(Game::activeLevel->layer2[owner->GridXPos-1][owner->GridYPos].entityInNode->GetComponent("Push"));
 				pushComp->TryToPush(moveDir);
@@ -62,6 +63,7 @@ void PlayerMove::TryToMove(Direction::dirs moveDir)
 		if (Game::activeLevel->layer2[owner->GridXPos + 1][owner->GridYPos].entityInNode != NULL
 			&& Game::activeLevel->layer2[owner->GridXPos + 1][owner->GridYPos].entityInNode->hasCollision) {
 			owner->OnCollision(*(Game::activeLevel->layer2[owner->GridXPos + 1][owner->GridYPos].entityInNode));
+			owner->OnCollision(*(Game::activeLevel->layer1[owner->GridXPos + 1][owner->GridYPos].entityInNode));
 			if (Game::activeLevel->layer2[owner->GridXPos + 1][owner->GridYPos].entityInNode->GetComponent("Push")) {
 				Push* pushComp = dynamic_cast<Push*>(Game::activeLevel->layer2[owner->GridXPos + 1][owner->GridYPos].entityInNode->GetComponent("Push"));
 				pushComp->TryToPush(moveDir);
@@ -80,6 +82,7 @@ void PlayerMove::TryToMove(Direction::dirs moveDir)
 		if (Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos-1].entityInNode != NULL
 			&& Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos-1].entityInNode->hasCollision) {
 			owner->OnCollision(*(Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos-1].entityInNode));
+			owner->OnCollision(*(Game::activeLevel->layer1[owner->GridXPos][owner->GridYPos - 1].entityInNode));
 			if (Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos-1].entityInNode->GetComponent("Push")) {
 				Push* pushComp = dynamic_cast<Push*>(Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos-1].entityInNode->GetComponent("Push"));
 				pushComp->TryToPush(moveDir);
@@ -97,6 +100,7 @@ void PlayerMove::TryToMove(Direction::dirs moveDir)
 		if (Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos + 1].entityInNode != NULL
 			&& Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos + 1].entityInNode->hasCollision) {
 			owner->OnCollision(*(Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos + 1].entityInNode));
+			owner->OnCollision(*(Game::activeLevel->layer1[owner->GridXPos][owner->GridYPos + 1].entityInNode));
 			if (Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos + 1].entityInNode->GetComponent("Push")) {
 				Push* pushComp = dynamic_cast<Push*>(Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos + 1].entityInNode->GetComponent("Push"));
 				pushComp->TryToPush(moveDir);

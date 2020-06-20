@@ -25,6 +25,28 @@ void Game::Update() {
 		//printf("player componenets updated");
 		comp->UpdateComponent();
 	}
+
+	//TODO: boxes then goals. for now all at once.
+	for (int r = 0; r < 16; r++) {
+		for (int c = 0; c < 16; c++) {
+			if (activeLevel->layer1[r][c].entityInNode != NULL && !(activeLevel->layer1[r][c].entityInNode->GetComponent("PlayerMove"))) {
+				for (Component* comp : activeLevel->layer1[r][c].entityInNode->components) {
+					comp->UpdateComponent();
+				}
+			}
+			if (activeLevel->layer2[r][c].entityInNode != NULL && !(activeLevel->layer2[r][c].entityInNode->GetComponent("PlayerMove"))) {
+				for (Component* comp : activeLevel->layer2[r][c].entityInNode->components) {
+					comp->UpdateComponent();
+				}
+			}
+			else {
+			}
+		}
+	}
+	if (activeLevel->CheckLevelStatus()) {
+		printf("LEVEL CLEARED!\n");
+	}
+
 }
 
 void Game::Render() {

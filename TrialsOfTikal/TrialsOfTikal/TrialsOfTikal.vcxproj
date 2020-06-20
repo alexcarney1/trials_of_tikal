@@ -151,6 +151,7 @@
     <ClCompile Include="Floor.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Goal.cpp" />
+    <ClCompile Include="GoalBehavior.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Node.cpp" />
@@ -167,6 +168,7 @@
     <ClInclude Include="Floor.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Goal.h" />
+    <ClInclude Include="GoalBehavior.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Player.h" />

@@ -18,7 +18,7 @@ public:
 	virtual void OnCollision(Entity& other) =0;
 	Component *GetComponent(std::string compName) {
 		for (Component *comp : components) {
-			printf(comp->name.c_str());
+			//printf(comp->name.c_str());
 			if (comp->name.compare(compName) == 0) {
 				return comp;
 			}

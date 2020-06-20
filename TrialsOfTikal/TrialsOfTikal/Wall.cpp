@@ -3,6 +3,7 @@
 Wall::Wall() {
 	isWalkable = false;
 	hasCollision = true;
+	name = "Wall";
 	texture.loadFromFile("assets/wall.png");
 	sprite.setTexture(texture);
 	//sprite.setPosition(10, 10);

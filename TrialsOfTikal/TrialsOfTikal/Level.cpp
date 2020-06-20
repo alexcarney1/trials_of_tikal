@@ -6,7 +6,7 @@
 #include "Goal.h"
 #include "Box.h"
 #include <iostream>
-
+#include "GoalBehavior.h"
 char wallChar = '#';
 char floorChar = '.';
 char playerChar = 'p';
@@ -16,6 +16,7 @@ char boxChar = 'b';
 
 Level::Level(std::string FName) : player(Player()),numGoals(0) {
 	LoadLevelFromFile(FName);
+	CheckLevelStatus();
 	std::cout << numGoals << std::endl;
 }
 
@@ -90,4 +91,27 @@ void Level::LoadLevelFromFile(std::string FName) {
 		r++;
 	}
 
+}
+
+bool Level::CheckLevelStatus()
+{
+	int numGoalsCovered = 0;
+	for (int r = 0; r < 16; r++) {
+		for (int c = 0; c < 16; c++) {
+			if (layer1[r][c].entityInNode != NULL && layer1[r][c].entityInNode->GetComponent("GoalBehavior") != NULL) {
+				//printf("in here");
+				GoalBehavior* goalBehavior = dynamic_cast<GoalBehavior*>(layer1[r][c].entityInNode->GetComponent("GoalBehavior"));
+				if (goalBehavior->isCovered) {
+					numGoalsCovered += 1;
+				}
+			}
+		}
+	}
+	std::cout << numGoalsCovered << std::endl;
+	if (numGoalsCovered == numGoals) {
+		//printf("LEVEL CLEARED!\n");
+		return true;
+	}
+
+	return false;
 }
