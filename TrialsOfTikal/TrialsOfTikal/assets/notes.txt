@@ -4,3 +4,9 @@ that sets GridXPos, GridYPos,, and is walkable. This will clear 3 warnings.
 --queue up movement so it feels snappier
 --PlayerMove and Push have copy pasta code. Could
 be its own simplemove component down the line
+
+
+
+CHEESE NOTES:
+
+sprite pos need to be setpos(y,x) for rendering....!
