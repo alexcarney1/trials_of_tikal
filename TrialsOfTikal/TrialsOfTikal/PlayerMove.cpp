@@ -40,22 +40,22 @@ void PlayerMove::ReadInput()
 void PlayerMove::TryToMove(Direction::dirs moveDir)
 {
 	if (moveDir == Direction::NORTH) {
-		if (Game::activeLevel->layer2[owner->GridXPos-1][owner->GridYPos].entityInNode != NULL
-			&& Game::activeLevel->layer2[owner->GridXPos-1][owner->GridYPos].entityInNode->hasCollision) {
-			owner->OnCollision(*(Game::activeLevel->layer2[owner->GridXPos-1][owner->GridYPos].entityInNode));
+		if (Game::activeLevel->layer2[owner->GridXPos - 1][owner->GridYPos].entityInNode != NULL
+			&& Game::activeLevel->layer2[owner->GridXPos - 1][owner->GridYPos].entityInNode->hasCollision) {
+			owner->OnCollision(*(Game::activeLevel->layer2[owner->GridXPos - 1][owner->GridYPos].entityInNode));
 			owner->OnCollision(*(Game::activeLevel->layer1[owner->GridXPos - 1][owner->GridYPos].entityInNode));
-			if (Game::activeLevel->layer2[owner->GridXPos-1][owner->GridYPos].entityInNode->GetComponent("Push")) {
-				Push* pushComp = dynamic_cast<Push*>(Game::activeLevel->layer2[owner->GridXPos-1][owner->GridYPos].entityInNode->GetComponent("Push"));
+			if (Game::activeLevel->layer2[owner->GridXPos - 1][owner->GridYPos].entityInNode->GetComponent("Push")) {
+				Push* pushComp = dynamic_cast<Push*>(Game::activeLevel->layer2[owner->GridXPos - 1][owner->GridYPos].entityInNode->GetComponent("Push"));
 				pushComp->TryToPush(moveDir);
 			}
 		}
 
-		if (Game::activeLevel->layer2[owner->GridXPos-1][owner->GridYPos].entityInNode == NULL && Game::activeLevel->layer1[owner->GridXPos-1][owner->GridYPos].entityInNode->isWalkable) {
+		if (Game::activeLevel->layer2[owner->GridXPos - 1][owner->GridYPos].entityInNode == NULL && Game::activeLevel->layer1[owner->GridXPos - 1][owner->GridYPos].entityInNode->isWalkable) {
 			//printf("Move successful!");
-			Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos].entityInNode = NULL; //reset old pos to NULL
-			Game::activeLevel->layer2[owner->GridXPos-1][owner->GridYPos].entityInNode = owner;
+			Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos].entityInNode = NULL; //reset old pos to NULL TODO: ABSTRACT THIS OUT
+			Game::activeLevel->layer2[owner->GridXPos - 1][owner->GridYPos].entityInNode = owner;
 			owner->GridXPos -= 1;
-			owner->sprite.setPosition(owner->GridYPos * 32, owner->GridXPos * 32);
+			owner->sprite.setPosition(owner->GridYPos * 32, owner->GridXPos * 32); //TODO abstract this weird flipping out
 		}
 	}
 
@@ -79,19 +79,19 @@ void PlayerMove::TryToMove(Direction::dirs moveDir)
 		}
 	}
 	if (moveDir == Direction::WEST) {
-		if (Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos-1].entityInNode != NULL
-			&& Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos-1].entityInNode->hasCollision) {
-			owner->OnCollision(*(Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos-1].entityInNode));
+		if (Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos - 1].entityInNode != NULL
+			&& Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos - 1].entityInNode->hasCollision) {
+			owner->OnCollision(*(Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos - 1].entityInNode));
 			owner->OnCollision(*(Game::activeLevel->layer1[owner->GridXPos][owner->GridYPos - 1].entityInNode));
-			if (Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos-1].entityInNode->GetComponent("Push")) {
-				Push* pushComp = dynamic_cast<Push*>(Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos-1].entityInNode->GetComponent("Push"));
+			if (Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos - 1].entityInNode->GetComponent("Push")) {
+				Push* pushComp = dynamic_cast<Push*>(Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos - 1].entityInNode->GetComponent("Push"));
 				pushComp->TryToPush(moveDir);
 			}
 		}
-		if (Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos-1].entityInNode == NULL && Game::activeLevel->layer1[owner->GridXPos][owner->GridYPos-1].entityInNode->isWalkable) {
+		if (Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos - 1].entityInNode == NULL && Game::activeLevel->layer1[owner->GridXPos][owner->GridYPos - 1].entityInNode->isWalkable) {
 			//printf("Move successful!");
 			Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos].entityInNode = NULL; //reset old pos to NULL
-			Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos-1].entityInNode = owner;
+			Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos - 1].entityInNode = owner;
 			owner->GridYPos -= 1;
 			owner->sprite.setPosition(owner->GridYPos * 32, owner->GridXPos * 32);
 		}
