@@ -27,6 +27,10 @@ void Game::ReadMasterInput()
 		activeLevel->player.enabled = true;
 		activeLevel->monkey.enabled = false;
 	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
+	{
+		activeLevel = new Level("assets/testLevel.txt");
+	}
 
 }
 

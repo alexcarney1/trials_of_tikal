@@ -16,6 +16,7 @@ Monkey::Monkey()
 
 void Monkey::OnCollision(Entity& other)
 {
+	//cleanup this index
 	if (Game::activeLevel->layer2[other.GridXPos][other.GridYPos].entityInNode != NULL) {
 		if (Game::activeLevel->layer2[other.GridXPos][other.GridYPos].entityInNode->GetComponent("ArtifactPickUp")) {
 			ArtifactPickUp* arti = dynamic_cast<ArtifactPickUp*>(Game::activeLevel->layer2[other.GridXPos][other.GridYPos].entityInNode->GetComponent("ArtifactPickUp"));
