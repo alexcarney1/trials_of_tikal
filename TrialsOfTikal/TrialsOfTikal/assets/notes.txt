@@ -8,6 +8,7 @@ be its own simplemove component down the line
 
 URGENT TO DO:
 --TryToPush and playerMove :: cant walk on walkable layer 2 artifacts.
+^^^not sure this is a glitch actually
 --tag boxes to die after lava insteaf of current hack
 
 CHEESE NOTES:

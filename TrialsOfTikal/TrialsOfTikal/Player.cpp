@@ -4,6 +4,7 @@
 #include "Level.h"
 #include <iostream>
 #include "Push.h"
+#include "ArtifactPickUp.h"
 //PlayerMove playerMove;
 Player::Player() {
 	//playerMove = PlayerMove();
@@ -19,10 +20,6 @@ Player::Player() {
 
 void Player::OnCollision(Entity& other)
 {
-	if (other.name.compare("Artifact") == 0) {
-		printf("hit artifact");
-		Game::activeLevel->numArtifactsCollected += 1;
-		other.taggedToDie = true;
-		//Game::activeLevel->layer2[other.GridXPos][other.GridYPos].entityInNode = NULL;
-	}
+
+
 }

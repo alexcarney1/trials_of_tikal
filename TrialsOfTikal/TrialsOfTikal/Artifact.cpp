@@ -1,5 +1,6 @@
 #include "Artifact.h"
 #include "Game.h"
+#include "ArtifactPickUp.h"
 Artifact::Artifact()
 {
 	isWalkable = true;
@@ -7,6 +8,7 @@ Artifact::Artifact()
 	sprite.setTexture(texture);
 	//sprite.setPosition(10, 10);
 	name = "Artifact";
+	components.push_back(new ArtifactPickUp(*this));
 }
 
 void Artifact::OnCollision(Entity& other)

@@ -2,7 +2,7 @@
 #include "Game.h"
 #include <iostream>
 #include "Push.h"
-
+#include "ArtifactPickUp.h"
 PlayerMove::PlayerMove(Entity& newOwner) : owner(&newOwner){
 	name = "PlayerMove";
 	//owner = &newOwner;
@@ -52,6 +52,10 @@ void PlayerMove::TryToMove(Direction::dirs moveDir)
 			if (Game::activeLevel->layer2[owner->GridXPos - 1][owner->GridYPos].entityInNode->GetComponent("Push")) {
 				Push* pushComp = dynamic_cast<Push*>(Game::activeLevel->layer2[owner->GridXPos - 1][owner->GridYPos].entityInNode->GetComponent("Push"));
 				pushComp->TryToPush(moveDir);
+			}
+			if (Game::activeLevel->layer2[owner->GridXPos - 1][owner->GridYPos].entityInNode->GetComponent("ArtifactPickUp")) {
+				ArtifactPickUp* arti = dynamic_cast<ArtifactPickUp*>(Game::activeLevel->layer2[owner->GridXPos-1][owner->GridYPos].entityInNode->GetComponent("ArtifactPickUp"));
+				arti->PickUp();
 			}
 		}
 

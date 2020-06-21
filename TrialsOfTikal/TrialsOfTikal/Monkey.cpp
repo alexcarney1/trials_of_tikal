@@ -15,4 +15,10 @@ Monkey::Monkey()
 
 void Monkey::OnCollision(Entity& other)
 {
+	if (other.name.compare("Artifact") == 0) {
+		printf("hit artifact");
+		Game::activeLevel->numArtifactsCollected += 1;
+		other.taggedToDie = true;
+		//Game::activeLevel->layer2[other.GridXPos][other.GridYPos].entityInNode = NULL;
+	}
 }
