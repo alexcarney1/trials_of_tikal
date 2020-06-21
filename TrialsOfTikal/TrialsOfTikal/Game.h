@@ -11,5 +11,6 @@ public:
 	  void ReadMasterInput();
 	  void Render();
 	  void Update();
+	  void PostUpdate();
 };
 

@@ -57,12 +57,26 @@ void Game::Update() {
 					comp->UpdateComponent();
 				}
 			}
-			else {
-			}
 		}
 	}
+	PostUpdate();
+
 	if (activeLevel->CheckLevelStatus()) {
 		printf("LEVEL CLEARED!\n");
+	}
+
+}
+
+void Game::PostUpdate() {
+	for (int r = 0; r < 16; r++) {
+		for (int c = 0; c < 16; c++) {
+			if (activeLevel->layer1[r][c].entityInNode != NULL && activeLevel->layer1[r][c].entityInNode->taggedToDie) {
+				activeLevel->layer1[r][c].entityInNode = NULL;
+			}
+			if (activeLevel->layer2[r][c].entityInNode != NULL && activeLevel->layer2[r][c].entityInNode->taggedToDie) {
+				activeLevel->layer2[r][c].entityInNode = NULL;
+			}
+		}
 	}
 
 }
