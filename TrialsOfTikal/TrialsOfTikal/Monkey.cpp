@@ -1,6 +1,7 @@
 #include "Monkey.h"
 #include "PlayerMove.h"
 #include "Push.h"
+#include "ArtifactPickUp.h"
 Monkey::Monkey()
 {
 	//playerMove = PlayerMove();
@@ -15,10 +16,10 @@ Monkey::Monkey()
 
 void Monkey::OnCollision(Entity& other)
 {
-	if (other.name.compare("Artifact") == 0) {
-		printf("hit artifact");
-		Game::activeLevel->numArtifactsCollected += 1;
-		other.taggedToDie = true;
-		//Game::activeLevel->layer2[other.GridXPos][other.GridYPos].entityInNode = NULL;
+	if (Game::activeLevel->layer2[other.GridXPos][other.GridYPos].entityInNode != NULL) {
+		if (Game::activeLevel->layer2[other.GridXPos][other.GridYPos].entityInNode->GetComponent("ArtifactPickUp")) {
+			ArtifactPickUp* arti = dynamic_cast<ArtifactPickUp*>(Game::activeLevel->layer2[other.GridXPos][other.GridYPos].entityInNode->GetComponent("ArtifactPickUp"));
+			arti->PickUp();
+		}
 	}
 }
