@@ -144,6 +144,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Artifact.cpp" />
     <ClCompile Include="Box.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Direction.cpp" />
@@ -164,6 +165,7 @@
     <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Artifact.h" />
     <ClInclude Include="Box.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="Direction.h" />

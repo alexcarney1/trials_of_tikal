@@ -14,5 +14,7 @@ public: Level(std::string FName);
 	  Player player;
 	  Monkey monkey;
 	  int numGoals;
+	  int numArtifacts;
+	  int numArtifactsCollected;
 };
 

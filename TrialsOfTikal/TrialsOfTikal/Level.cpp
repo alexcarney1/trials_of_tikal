@@ -8,6 +8,7 @@
 #include <iostream>
 #include "GoalBehavior.h"
 #include "Lava.h"
+#include "Artifact.h"
 char wallChar = '#';
 char floorChar = '.';
 char playerChar = 'p';
@@ -15,8 +16,9 @@ char goalChar = 'g';
 char boxChar = 'b';
 char lavaChar = 'l';
 char monkeyChar = 'm';
+char artifactChar = 'a';
 
-Level::Level(std::string FName) : player(Player()),numGoals(0), monkey(Monkey()) {
+Level::Level(std::string FName) : player(Player()),numGoals(0), monkey(Monkey()), numArtifactsCollected(0) {
 	LoadLevelFromFile(FName);
 	CheckLevelStatus();
 	
@@ -70,6 +72,21 @@ void Level::LoadLevelFromFile(std::string FName) {
 				layer2[r][c].entityInNode = NULL; //empty...
 				layer2[r][c].xPos = r; layer2[r][c].yPos = c;
 				numGoals += 1;
+			}
+			else if (fileLine[c] == artifactChar) {
+				layer1[r][c] = Node();
+				layer1[r][c].entityInNode = new Floor();
+				layer1[r][c].xPos = r; layer1[r][c].yPos = c;
+				layer1[r][c].entityInNode->sprite.setPosition(c * 32, r * 32);
+				layer1[r][c].entityInNode->GridXPos = r;
+				layer1[r][c].entityInNode->GridYPos = c;
+				layer2[r][c] = Node();
+				layer2[r][c].entityInNode = new Artifact(); //empty...
+				layer2[r][c].entityInNode->sprite.setPosition(c * 32, r * 32);
+				layer2[r][c].entityInNode->GridXPos = r;
+				layer2[r][c].entityInNode->GridYPos = c;
+				layer2[r][c].xPos = r; layer2[r][c].yPos = c;
+				numArtifacts += 1;
 			}
 			else if (fileLine[c] == boxChar) {
 				layer1[r][c] = Node();
@@ -132,8 +149,8 @@ bool Level::CheckLevelStatus()
 		}
 	}
 	//std::cout << numGoalsCovered << std::endl;
-	//std::cout << numGoals << std::endl;
-	if (numGoalsCovered == numGoals) {
+	//std::cout << numArtifacts << std::endl;
+	if (numGoalsCovered == numGoals && numArtifactsCollected == numArtifacts) {
 		//printf("LEVEL CLEARED!\n");
 		return true;
 	}
