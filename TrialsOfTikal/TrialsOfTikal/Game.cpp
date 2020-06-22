@@ -6,8 +6,8 @@
 #include "Component.h"
 
 //todo: change levels
-Level* Game::activeLevel = new Level("assets/islandTest.txt");
-Game::Game() : window(new sf::RenderWindow(sf::VideoMode(512, 512), "Trials of Tikal", sf::Style::Titlebar | sf::Style::Close)){
+Level* Game::activeLevel = new Level("assets/testLevel.txt");
+Game::Game() : window(new sf::RenderWindow(sf::VideoMode(768, 768), "Trials of Tikal", sf::Style::Titlebar | sf::Style::Close)){
 	window->setFramerateLimit(30);
 }
 
@@ -29,7 +29,7 @@ void Game::ReadMasterInput()
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
 	{
-		activeLevel = new Level("assets/islandTest.txt");
+		activeLevel = new Level("assets/testLevel.txt");
 	}
 
 }
@@ -92,9 +92,13 @@ void Game::Render() {
 	for (int r = 0; r < 16; r++) {
 		for (int c = 0; c < 16; c++) {
 			if (activeLevel->layer1[r][c].entityInNode != NULL) {
+				activeLevel->layer1[r][c].entityInNode->sprite.setScale(3,3);
+				activeLevel->layer1[r][c].entityInNode->sprite.setPosition(c * 48, r * 48);
 				this->window->draw(activeLevel->layer1[r][c].entityInNode->sprite);
 			}
 			if (activeLevel->layer2[r][c].entityInNode != NULL) {
+				activeLevel->layer2[r][c].entityInNode->sprite.setScale(3, 3);
+				activeLevel->layer2[r][c].entityInNode->sprite.setPosition(c * 48, r * 48);
 				this->window->draw(activeLevel->layer2[r][c].entityInNode->sprite);
 			}
 			else {
