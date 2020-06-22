@@ -4,11 +4,11 @@
 #include "Level.h"
 #include "PlayerMove.h"
 #include "Component.h"
-
+#include "GoalBehavior.h"
 //todo: change levels
 Level* Game::activeLevel = new Level("assets/testLevel.txt");
 Game::Game() : window(new sf::RenderWindow(sf::VideoMode(768, 768), "Trials of Tikal", sf::Style::Titlebar | sf::Style::Close)){
-	window->setFramerateLimit(30);
+	window->setFramerateLimit(20);
 }
 
 Game::~Game() {
@@ -65,9 +65,7 @@ void Game::Update() {
 	}
 	PostUpdate();
 
-	if (activeLevel->CheckLevelStatus()) {
-		printf("LEVEL CLEARED!\n");
-	}
+
 
 }
 
@@ -76,11 +74,21 @@ void Game::PostUpdate() {
 		for (int c = 0; c < 16; c++) {
 			if (activeLevel->layer1[r][c].entityInNode != NULL && activeLevel->layer1[r][c].entityInNode->taggedToDie) {
 				activeLevel->layer1[r][c].entityInNode = NULL;
+
+				//Hack .Updating goal positions again because now they might not be covered after a move. Could do boxes, then goals in a later build
+				if (activeLevel->layer1[r][c].entityInNode != NULL && activeLevel->layer1[r][c].entityInNode->GetComponent("GoalBehavior") != NULL) {
+					//printf("in here");
+					GoalBehavior* goalBehavior = dynamic_cast<GoalBehavior*>(activeLevel->layer1[r][c].entityInNode->GetComponent("GoalBehavior"));
+					goalBehavior->UpdateComponent();
+				}
 			}
 			if (activeLevel->layer2[r][c].entityInNode != NULL && activeLevel->layer2[r][c].entityInNode->taggedToDie) {
 				activeLevel->layer2[r][c].entityInNode = NULL;
 			}
 		}
+	}
+	if (activeLevel->CheckLevelStatus()) {
+		printf("LEVEL CLEARED!\n");
 	}
 
 }

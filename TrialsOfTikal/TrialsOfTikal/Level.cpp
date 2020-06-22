@@ -148,10 +148,7 @@ bool Level::CheckLevelStatus()
 			}
 		}
 	}
-	//std::cout << numGoalsCovered << std::endl;
-	//std::cout << numArtifacts << std::endl;
 	if (numGoalsCovered == numGoals && numArtifactsCollected == numArtifacts) {
-		//printf("LEVEL CLEARED!\n");
 		return true;
 	}
 

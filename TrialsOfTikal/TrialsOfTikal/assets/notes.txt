@@ -7,7 +7,7 @@ be its own simplemove component down the line
 --maybe light beams to direct
 
 URGENT TO DO:
---win conditions broken with spaces next to each other because box is in both on both ticks
+--maybe move win condition check to post update
 --TryToPush and playerMove :: cant walk on walkable layer 2 artifacts.
 ^^^not sure this is a glitch actually
 --tag boxes to die after lava insteaf of current hack
