@@ -23,4 +23,9 @@ void Monkey::OnCollision(Entity& other)
 			arti->PickUp();
 		}
 	}
+	if (other.killOnContact) {
+		//Game::ResetLevel();
+		taggedToDie = true;
+		return;
+	}
 }

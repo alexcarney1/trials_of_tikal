@@ -91,6 +91,12 @@ void Game::PostUpdate() {
 	if (activeLevel->CheckLevelStatus()) {
 		printf("LEVEL CLEARED!\n");
 	}
+	if (activeLevel->player.taggedToDie) {
+		ResetLevel();
+	}
+	else if (activeLevel->monkey.taggedToDie) {
+		ResetLevel();
+	}
 
 }
 
