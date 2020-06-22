@@ -11,6 +11,7 @@ void LavaFiller::UpdateComponent()
 	if (Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos].entityInNode != NULL && !isFilled) {
 		isFilled = true;
 		if (Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos].entityInNode->name.compare("Box") == 0) {
+			delete Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos].entityInNode; //delete box
 			Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos].entityInNode = NULL;
 		}
 	}
