@@ -2,6 +2,7 @@
 #include "PlayerMove.h"
 #include "Push.h"
 #include "ArtifactPickUp.h"
+#include "BreakTheFloor.h"
 Monkey::Monkey()
 {
 	//playerMove = PlayerMove();
@@ -16,6 +17,13 @@ Monkey::Monkey()
 
 void Monkey::OnCollision(Entity& other)
 {
+	if (Game::activeLevel->layer1[other.GridXPos][other.GridYPos].entityInNode != NULL) {
+		if (Game::activeLevel->layer1[other.GridXPos][other.GridYPos].entityInNode->GetComponent("BreakTheFloor")) {
+			printf("here");
+			BreakTheFloor* btf = dynamic_cast<BreakTheFloor*>(Game::activeLevel->layer1[other.GridXPos][other.GridYPos].entityInNode->GetComponent("BreakTheFloor"));
+			btf->UpdateBrokenStatus(*this);
+		}
+	}
 	//cleanup this index
 	if (Game::activeLevel->layer2[other.GridXPos][other.GridYPos].entityInNode != NULL) {
 		if (Game::activeLevel->layer2[other.GridXPos][other.GridYPos].entityInNode->GetComponent("ArtifactPickUp")) {

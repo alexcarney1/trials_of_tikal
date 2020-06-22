@@ -147,6 +147,8 @@
     <ClCompile Include="Artifact.cpp" />
     <ClCompile Include="ArtifactPickUp.cpp" />
     <ClCompile Include="Box.cpp" />
+    <ClCompile Include="BreakTheFloor.cpp" />
+    <ClCompile Include="BrokenFloor.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Direction.cpp" />
     <ClCompile Include="Entity.cpp" />
@@ -169,6 +171,8 @@
     <ClInclude Include="Artifact.h" />
     <ClInclude Include="ArtifactPickUp.h" />
     <ClInclude Include="Box.h" />
+    <ClInclude Include="BreakTheFloor.h" />
+    <ClInclude Include="BrokenFloor.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="Direction.h" />
     <ClInclude Include="Entity.h" />

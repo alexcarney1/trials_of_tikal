@@ -6,6 +6,7 @@
 #include "Push.h"
 #include "ArtifactPickUp.h"
 #include "Game.h"
+#include "BreakTheFloor.h"
 //PlayerMove playerMove;
 Player::Player() {
 	//playerMove = PlayerMove();
@@ -21,6 +22,13 @@ Player::Player() {
 
 void Player::OnCollision(Entity& other)
 {
+	if (Game::activeLevel->layer1[other.GridXPos][other.GridYPos].entityInNode != NULL) {
+		if (Game::activeLevel->layer1[other.GridXPos][other.GridYPos].entityInNode->GetComponent("BreakTheFloor")) {
+			printf("here");
+			BreakTheFloor* btf = dynamic_cast<BreakTheFloor*>(Game::activeLevel->layer1[other.GridXPos][other.GridYPos].entityInNode->GetComponent("BreakTheFloor"));
+			btf->UpdateBrokenStatus(*this);
+		}
+	}
 
 	//HACK: because of that exeption this is neded to delete an object on collision...ould maybe tag to die and kill stuff more often
 	if (Game::activeLevel->layer2[other.GridXPos][other.GridYPos].entityInNode != NULL) {

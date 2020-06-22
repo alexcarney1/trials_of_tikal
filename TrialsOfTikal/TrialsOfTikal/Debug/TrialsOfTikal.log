@@ -1,8 +1,2 @@
-﻿  Game.cpp
-D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\Game.cpp(116,74): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\Game.cpp(116,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\Game.cpp(121,74): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\trials_of_tikal\TrialsOfTikal\TrialsOfTikal\Game.cpp(121,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Monkey.cpp
-  Generating Code...
+﻿  Monkey.cpp
   TrialsOfTikal.vcxproj -> D:\trials_of_tikal\TrialsOfTikal\Debug\TrialsOfTikal.exe

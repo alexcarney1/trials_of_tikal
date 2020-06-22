@@ -3,6 +3,7 @@
 #include <iostream>
 #include "Push.h"
 #include "ArtifactPickUp.h"
+#include "BreakTheFloor.h"
 PlayerMove::PlayerMove(Entity& newOwner) : owner(&newOwner){
 	name = "PlayerMove";
 	//owner = &newOwner;
@@ -39,6 +40,10 @@ void PlayerMove::ReadInput()
 
 void PlayerMove::TryToMove(Direction::dirs moveDir)
 {
+	if (Game::activeLevel->layer1[owner->GridXPos][owner->GridYPos].entityInNode->GetComponent("BreakTheFloor")) {
+		BreakTheFloor* btf = dynamic_cast<BreakTheFloor*>(Game::activeLevel->layer1[owner->GridXPos][owner->GridYPos].entityInNode->GetComponent("BreakTheFloor"));
+		btf->UpdateBrokenStatus(*owner);
+	}
 	if (moveDir == Direction::NORTH) {
 		//collide layer1
 		if (Game::activeLevel->layer1[owner->GridXPos - 1][owner->GridYPos].entityInNode != NULL) {

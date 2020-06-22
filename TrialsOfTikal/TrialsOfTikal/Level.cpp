@@ -9,6 +9,7 @@
 #include "GoalBehavior.h"
 #include "Lava.h"
 #include "Artifact.h"
+#include "BrokenFloor.h"
 char wallChar = '#';
 char floorChar = '.';
 char playerChar = 'p';
@@ -17,7 +18,7 @@ char boxChar = 'b';
 char lavaChar = 'l';
 char monkeyChar = 'm';
 char artifactChar = 'a';
-
+char crackedFloorChar = 'c';
 Level::Level(std::string FName) : player(Player()),numGoals(0), monkey(Monkey()), numArtifactsCollected(0) {
 	LoadLevelFromFile(FName);
 	CheckLevelStatus();
@@ -55,6 +56,17 @@ void Level::LoadLevelFromFile(std::string FName) {
 				layer1[r][c].entityInNode = new Floor();
 				layer1[r][c].xPos = r; layer1[r][c].yPos = c;
 				layer1[r][c].entityInNode->sprite.setPosition(c*16, r*16);
+				layer1[r][c].entityInNode->GridXPos = r;
+				layer1[r][c].entityInNode->GridYPos = c;
+				layer2[r][c] = Node();
+				layer2[r][c].entityInNode = NULL; //empty...
+				layer2[r][c].xPos = r; layer2[r][c].yPos = c;
+			}
+			else if (fileLine[c] == crackedFloorChar) {
+				layer1[r][c] = Node();
+				layer1[r][c].entityInNode = new BrokenFloor();
+				layer1[r][c].xPos = r; layer1[r][c].yPos = c;
+				layer1[r][c].entityInNode->sprite.setPosition(c * 16, r * 16);
 				layer1[r][c].entityInNode->GridXPos = r;
 				layer1[r][c].entityInNode->GridYPos = c;
 				layer2[r][c] = Node();

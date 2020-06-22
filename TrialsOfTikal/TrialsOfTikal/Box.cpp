@@ -1,6 +1,7 @@
 #include "Box.h"
 #include "Push.h"
 #include "LavaFiller.h"
+#include "BreakTheFloor.h"
 Box::Box() {
 	isWalkable = false;
 	name = "Box";
@@ -18,4 +19,10 @@ void Box::OnCollision(Entity& other)
 		LavaFiller* lavaFiller = dynamic_cast<LavaFiller*>(other.GetComponent("LavaFiller"));
 		lavaFiller->FillLava();
 	}
+	if (other.GetComponent("BreakTheFloor")) {
+		printf("box collided");
+		BreakTheFloor* btf = dynamic_cast<BreakTheFloor*>(Game::activeLevel->layer1[other.GridXPos][other.GridYPos].entityInNode->GetComponent("BreakTheFloor"));
+		btf->UpdateBrokenStatus(*this);
+	}
+
 }
