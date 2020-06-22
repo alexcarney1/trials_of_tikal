@@ -10,6 +10,7 @@ void LavaFiller::UpdateComponent()
 	//TODO: ghetto way of deleting a box...called after box is done with its move component...in theory
 	if (Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos].entityInNode != NULL && !isFilled) {
 		isFilled = true;
+		owner->killOnContact = false;
 		if (Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos].entityInNode->name.compare("Box") == 0) {
 			delete Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos].entityInNode; //delete box
 			Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos].entityInNode = NULL;

@@ -16,6 +16,7 @@ public:
 	int GridYPos;
 	bool enabled = true;
 	bool taggedToDie = false;
+	bool killOnContact = false;
 	std::string name;
 	virtual void OnCollision(Entity& other) =0;
 	Component *GetComponent(std::string compName) {

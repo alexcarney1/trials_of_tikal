@@ -12,5 +12,6 @@ public:
 	  void Render();
 	  void Update();
 	  void PostUpdate();
+	  static void ResetLevel();
 };
 

@@ -6,7 +6,7 @@
 #include "Component.h"
 #include "GoalBehavior.h"
 //todo: change levels
-Level* Game::activeLevel = new Level("assets/islandTest.txt");
+Level* Game::activeLevel = new Level("assets/testLevel.txt");
 Game::Game() : window(new sf::RenderWindow(sf::VideoMode(768, 768), "Trials of Tikal", sf::Style::Titlebar | sf::Style::Close)){
 	window->setFramerateLimit(20);
 }
@@ -29,7 +29,8 @@ void Game::ReadMasterInput()
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
 	{
-		activeLevel = new Level("assets/islandTest.txt");
+		ResetLevel();
+		
 	}
 
 }
@@ -91,6 +92,11 @@ void Game::PostUpdate() {
 		printf("LEVEL CLEARED!\n");
 	}
 
+}
+
+void Game::ResetLevel()
+{
+	activeLevel = new Level("assets/testLevel.txt");
 }
 
 void Game::Render() {

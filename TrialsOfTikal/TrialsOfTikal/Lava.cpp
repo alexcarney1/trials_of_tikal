@@ -2,8 +2,9 @@
 #include "LavaFiller.h"
 Lava::Lava()
 {
-	isWalkable = false;
+	isWalkable = true;
 	hasCollision = true;
+	killOnContact = true;
 	texture.loadFromFile("assets/lava.png");
 	sprite.setTexture(texture);
 	//sprite.setPosition(10, 10);

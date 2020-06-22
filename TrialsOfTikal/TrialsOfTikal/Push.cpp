@@ -9,6 +9,7 @@ void Push::UpdateComponent()
 {
 }
 
+//SLIGHLTY DIFFERENT FORM PLAYER OMVE BECAUSE IT CAN BE ON A KILLABLE SURFACE!
 //not checking all layers here. oops.
 void Push::TryToPush(Direction::dirs moveDir)
 {

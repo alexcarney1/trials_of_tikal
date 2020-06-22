@@ -59,7 +59,8 @@ void PlayerMove::TryToMove(Direction::dirs moveDir)
 		}
 
 		//Move
-		if (Game::activeLevel->layer2[owner->GridXPos - 1][owner->GridYPos].entityInNode == NULL && Game::activeLevel->layer1[owner->GridXPos - 1][owner->GridYPos].entityInNode->isWalkable) {
+		if (Game::activeLevel->layer2[owner->GridXPos - 1][owner->GridYPos].entityInNode == NULL && Game::activeLevel->layer1[owner->GridXPos - 1][owner->GridYPos].entityInNode->isWalkable
+			&& !(Game::activeLevel->layer1[owner->GridXPos - 1][owner->GridYPos].entityInNode->killOnContact)) {
 			//printf("Move successful!");
 			Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos].entityInNode = NULL; //reset old pos to NULL TODO: ABSTRACT THIS OUT
 			Game::activeLevel->layer2[owner->GridXPos - 1][owner->GridYPos].entityInNode = owner;
@@ -89,7 +90,8 @@ void PlayerMove::TryToMove(Direction::dirs moveDir)
 		}
 
 		//Move
-		if (Game::activeLevel->layer2[owner->GridXPos + 1][owner->GridYPos].entityInNode == NULL && Game::activeLevel->layer1[owner->GridXPos + 1][owner->GridYPos].entityInNode->isWalkable) {
+		if (Game::activeLevel->layer2[owner->GridXPos + 1][owner->GridYPos].entityInNode == NULL && Game::activeLevel->layer1[owner->GridXPos + 1][owner->GridYPos].entityInNode->isWalkable
+			&& !(Game::activeLevel->layer1[owner->GridXPos + 1][owner->GridYPos].entityInNode->killOnContact)) {
 			//printf("Move successful!");
 			Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos].entityInNode = NULL; //reset old pos to NULL TODO: ABSTRACT THIS OUT
 			Game::activeLevel->layer2[owner->GridXPos + 1][owner->GridYPos].entityInNode = owner;
@@ -121,7 +123,8 @@ void PlayerMove::TryToMove(Direction::dirs moveDir)
 
 
 		//Move
-		if (Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos-1].entityInNode == NULL && Game::activeLevel->layer1[owner->GridXPos][owner->GridYPos-1].entityInNode->isWalkable) {
+		if (Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos-1].entityInNode == NULL && Game::activeLevel->layer1[owner->GridXPos][owner->GridYPos-1].entityInNode->isWalkable
+			&& !(Game::activeLevel->layer1[owner->GridXPos][owner->GridYPos-1].entityInNode->killOnContact)) {
 			//printf("Move successful!");
 			Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos].entityInNode = NULL; //reset old pos to NULL TODO: ABSTRACT THIS OUT
 			Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos-1].entityInNode = owner;
@@ -153,7 +156,8 @@ void PlayerMove::TryToMove(Direction::dirs moveDir)
 
 
 		//Move
-		if (Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos + 1].entityInNode == NULL && Game::activeLevel->layer1[owner->GridXPos][owner->GridYPos + 1].entityInNode->isWalkable) {
+		if (Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos + 1].entityInNode == NULL && Game::activeLevel->layer1[owner->GridXPos][owner->GridYPos + 1].entityInNode->isWalkable
+			&& !(Game::activeLevel->layer1[owner->GridXPos][owner->GridYPos+1].entityInNode->killOnContact)) {
 			//printf("Move successful!");
 			Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos].entityInNode = NULL; //reset old pos to NULL TODO: ABSTRACT THIS OUT
 			Game::activeLevel->layer2[owner->GridXPos][owner->GridYPos+1].entityInNode = owner;
