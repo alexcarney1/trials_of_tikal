@@ -14,6 +14,7 @@ Artifact::Artifact()
 #dddfeddfd
 #HE
 #dfsfsfsf
+#dsfdsfds
 void Artifact::OnCollision(Entity& other)
 {
 }
