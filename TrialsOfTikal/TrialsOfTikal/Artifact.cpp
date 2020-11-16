@@ -10,6 +10,7 @@ Artifact::Artifact()
 	name = "Artifact";
 	components.push_back(new ArtifactPickUp(*this));
 }
+#ssdfdfdfdf
 #dddfeddfd
 #HE
 void Artifact::OnCollision(Entity& other)
